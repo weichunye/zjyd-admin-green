@@ -12,9 +12,9 @@
           <div class="top">
             <h4 class="title">{{item.name}}</h4>
             <div class="right">
-              <el-button  v-if="!item.isAccess"  type="primary"  plain @click="dialogVisible = true" >审核</el-button>
+              <el-button  v-if="!item.isAccess"  type="primary"  plain @click="dialogVisible = true,itemNum=index" >审核</el-button>
               <el-button v-else  disabled  type="info"  plain >审核</el-button>
-              <el-button  v-if="!item.isAccess" type="info" disabled plain >上传</el-button>
+              <el-button  v-if="!item.isUpload" type="info" disabled plain >上传</el-button>
               <el-button  v-else  type="primary"  plain @click="uploadVisible=true">上传</el-button>
             </div>
           </div>
@@ -84,17 +84,19 @@
         classForm:{
           desc:''
         },
-        isAccess:false,
+        itemNum:0,
+        isAccessFlag:false,
+        isUpload:false,
         uploadVisible:false,
         dataList:[
           {type:'2',name:'扫描版《图解星学大成全三部》[PDF]','desc':'《星学大成》是收录于《四库全书.子部》的最重要的星命学著作，作者万民英精选了明代流传的星学秘藏珍本，将其汇集成, 星学大成》是收录于《四库全书.子部》的最重要的星命学著作，作者万民英精选了明代流传的星学秘藏珍本，将其汇集成', percentage: '25', isAccess: true},
-          {type:'2', name: "《新版中日交流标准日本语(初.中级）》",'desc':'《新版中日交流标准日本语》是1988年出版的《中日交流标准日本语初级上、下》的修订本，是人民教育出版衬与日本光村图书', percentage: '40', isAccess: false},
-          {type:'2',name:'扫描版《鬼谷子绝学》[PDF]','desc':'《鬼谷子绝学》一个人缺的永远不是钱，缺的是赚钱的智谋，一个人缺的永远不是团队，缺的是俘获追', percentage: '50', isAccess: true},
-          {type:'2',name:'《大成拳》扫描版[PDF] 资料下载','desc':'意拳，又名大成拳，中国内家拳术的一种，源于心意拳', percentage: '100', isAccess: false},
-          {type:'2',name:'扫描本《蔡志忠漫画合集》','desc':'蔡志忠漫画合集36册 封神榜', percentage: '80', isAccess: true},
-          {type:'2',name:'《超有趣的英文基础文法》[PDF]','desc':'最适合国人学习的英文文法书，针对最容易犯的文法错误，解析文法', percentage: '60', isAccess: true},
-          {type:'2',name:'《罗织经》扫描版[PDF]','desc':'历史上最著名的酷吏，请君入瓮的发明者来俊臣所著；乃中国几千年文', percentage: '87', isAccess: false},
-          {type:'2',name:'扫描版《清朝全史 最新经典珍藏》','desc':'《清朝全史(最新经典珍藏)》以宏阔的视角，科学的历史观述载历史，将中外历史汇聚成', percentage: '95', isAccess: true},
+          {type:'2', name: "《新版中日交流标准日本语(初.中级）》",'desc':'《新版中日交流标准日本语》是1988年出版的《中日交流标准日本语初级上、下》的修订本，是人民教育出版衬与日本光村图书', percentage: '40', isAccess: false,isUpload:false},
+          {type:'2',name:'扫描版《鬼谷子绝学》[PDF]','desc':'《鬼谷子绝学》一个人缺的永远不是钱，缺的是赚钱的智谋，一个人缺的永远不是团队，缺的是俘获追', percentage: '50', isAccess: true,isUpload:false},
+          {type:'2',name:'《大成拳》扫描版[PDF] 资料下载','desc':'意拳，又名大成拳，中国内家拳术的一种，源于心意拳', percentage: '100', isAccess: false,isUpload:false},
+          {type:'2',name:'扫描本《蔡志忠漫画合集》','desc':'蔡志忠漫画合集36册 封神榜', percentage: '80', isAccess: true,isUpload:false},
+          {type:'2',name:'《超有趣的英文基础文法》[PDF]','desc':'最适合国人学习的英文文法书，针对最容易犯的文法错误，解析文法', percentage: '60', isAccess: false,isUpload:false},
+          {type:'2',name:'《罗织经》扫描版[PDF]','desc':'历史上最著名的酷吏，请君入瓮的发明者来俊臣所著；乃中国几千年文', percentage: '87', isAccess: false,isUpload:false},
+          {type:'2',name:'扫描版《清朝全史 最新经典珍藏》','desc':'《清朝全史(最新经典珍藏)》以宏阔的视角，科学的历史观述载历史，将中外历史汇聚成', percentage: '95', isAccess: false,isUpload:false},
         ],
       }
 		},
@@ -113,6 +115,9 @@
           message: '审核完成',
           type: 'success'
         });
+        this.dataList[this.itemNum].isAccess=true
+        this.dataList[this.itemNum].isUpload=true
+
       },
       handleUpload(){
         this.uploadVisible=false
@@ -120,6 +125,7 @@
           message: '上传成功',
           type: 'success'
         });
+        this.dataList[this.itemNum].isUpload=false
       },
     }
 	}

@@ -12,7 +12,7 @@
           <div class="top">
             <h4 class="title">{{item.name}}</h4>
             <div class="right">
-              <el-button v-if="!item.isAccess" type="primary" class="right-bottom" plain @click="dialogVisible = true" >审核</el-button>
+              <el-button v-if="!item.isAccess" type="primary" class="right-bottom" plain @click="dialogVisible = true,itemNum=index" >审核</el-button>
               <el-button v-else disabled type="info" plain  >审核</el-button>
             </div>
           </div>
@@ -66,10 +66,10 @@
         input: '',
         dialogVisible:false,
         radio:'1',
+        itemNum:0,
         classForm:{
           desc:''
         },
-        isAccess:false,
         dataList:[
           {type:'2',name:'扫描版《图解星学大成全三部》[PDF]','desc':'《星学大成》是收录于《四库全书.子部》的最重要的星命学著作，作者万民英精选了明代流传的星学秘藏珍本，将其汇集成, 星学大成》是收录于《四库全书.子部》的最重要的星命学著作，作者万民英精选了明代流传的星学秘藏珍本，将其汇集成', percentage: '25', isAccess: true},
           {type:'2', name: "《新版中日交流标准日本语(初.中级）》",'desc':'《新版中日交流标准日本语》是1988年出版的《中日交流标准日本语初级上、下》的修订本，是人民教育出版衬与日本光村图书', percentage: '40', isAccess: false},
@@ -92,11 +92,11 @@
 		methods: {
       handleClose() {
         this.dialogVisible=false
-        this.isAccess=true
         this.$message({
           message: '审核完成',
           type: 'success'
         });
+        this.dataList[this.itemNum].isAccess=true
       },
     }
 	}

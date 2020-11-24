@@ -154,7 +154,7 @@ import Heade from '../../components/heade.vue'
           message: '课程创建成功',
           type: 'success'
         });
-        let newForm={img:"pic_1.png",name:this.classForm.name,desc:this.classForm.desc,time:this.classForm.startTime}
+        let newForm={img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606231884786&di=372850e5d25723c3b79c8f2a14a8fab8&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Fart_origin_min_pic%2F20%2F03%2F08%2Fbcbf2f266b75a26742d6bc92a09058b3.jpg",name:this.classForm.name,desc:this.classForm.desc,time:this.classForm.startTime}
         this.dataList.push(newForm)
       },
       handleAvatarSuccess(file, fileList) {

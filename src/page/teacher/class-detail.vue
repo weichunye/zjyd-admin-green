@@ -39,7 +39,7 @@
           </el-row>
           <el-row :gutter="20">
             <el-col :span="12" v-for="item in dataList">
-              <el-card class="box-card">
+              <el-card class="box-card" style="margin-top: 15px">
                 <div slot="header" class="clearfix">
                   <span>{{item.name}}</span>
                   <el-button @click="editClassroom(3)" style="float: right; padding: 5px 8px; margin-left: 10px " type="primary" plain >编辑</el-button>
@@ -49,62 +49,13 @@
                  <p class="activeDesc">{{item.desc}}</p>
                 </div>
                 <div class="text item">
-                  <p style="width: 100%; text-align: right; color: #999; font-size: 12px">2020-05-23</p>
+                  <p style="width: 100%; text-align: right; color: #999; font-size: 12px">{{item.time}}</p>
                 </div>
               </el-card>
             </el-col>
-            <!-- <el-col :span="12">
-              <el-card class="box-card">
-                <div slot="header" class="clearfix">
-                  <span>课堂名称</span>
-                  <el-button @click="editClassroom(3)"  style="float: right; padding: 5px 8px; margin-left: 10px " type="primary" plain >编辑</el-button>
-                  <el-button  @click="interactionVisible=true" style="float: right;padding: 5px 8px; " type="success" plain>备课</el-button>
-                </div>
-                <div class="text item">
-                  <p>课堂简介课堂简介课堂简介课堂简介课堂简介课堂简介</p>
-                </div>
-                <div class="text item">
-                  <p style="width: 100%; text-align: right; color: #999; font-size: 12px">2020-05-23</p>
-                </div>
-              </el-card>
-            </el-col>
-            <el-col :span="12" style="margin-top: 20px">
-              <el-card class="box-card">
-                <div slot="header" class="clearfix">
-                  <span>课堂名称</span>
-                  <el-button @click="editClassroom(3)"  style="float: right; padding: 5px 8px; margin-left: 10px " type="primary" plain >编辑</el-button>
-                  <el-button  @click="interactionVisible=true" style="float: right;padding: 5px 8px; " type="success" plain>备课</el-button>
-                </div>
-                <div class="text item">
-                  <p>课堂简介课堂简介课堂简介课堂简介课堂简介课堂简介</p>
-                </div>
-                <div class="text item">
-                  <p style="width: 100%; text-align: right; color: #999; font-size: 12px">2020-05-23</p>
-                </div>
-              </el-card>
-            </el-col>
-            <el-col :span="12" style="margin-top: 20px">
-              <el-card class="box-card">
-                <div slot="header" class="clearfix">
-                  <span>课堂名称</span>
-                  <el-button @click="editClassroom(3)"  style="float: right; padding: 5px 8px; margin-left: 10px " type="primary" plain >编辑</el-button>
-                  <el-button  @click="interactionVisible=true" style="float: right;padding: 5px 8px; " type="success" plain>备课</el-button>
-                </div>
-                <div class="text item">
-                  <p>课堂简介课堂简介课堂简介课堂简介课堂简介课堂简介</p>
-                </div>
-                <div class="text item">
-                  <p style="width: 100%; text-align: right; color: #999; font-size: 12px">2020-05-23</p>
-                </div>
-              </el-card>
-            </el-col> -->
           </el-row>
-
-
         </el-tab-pane>
       </el-tabs>
-
-
     </div>
     <el-dialog
       title="备课"
@@ -172,10 +123,14 @@
           </el-form-item>
           <el-form-item label="上课时间" prop="desc">
             <el-date-picker
-              v-model="HudongForm.startTime"
+              v-model="HudongForm.time"
               type="date"
+              value-format="yyyy-MM-dd"
               placeholder="选择日期">
             </el-date-picker>
+          </el-form-item>
+          <el-form-item label="资源描述" prop="desc">
+            <el-input type="textarea" v-model="HudongForm.desc"></el-input>
           </el-form-item>
         </el-form>
       </div>
@@ -246,7 +201,7 @@ import Heade from '../../components/heade.vue'
         },
         HudongForm:{
           name:'',
-          startTime:''
+          time:''
         },
         classForm:{
           name:'人工智能V1',
@@ -298,7 +253,7 @@ import Heade from '../../components/heade.vue'
         if (this.dialogType == 1) { // 添加讨论
           this.activeList.push(this.discussForm)
         } else {
-          this.activeList.push(this.HudongForm)
+          this.dataList.push(this.HudongForm)
         }
       },
       creatClassSuccess(){
@@ -313,11 +268,10 @@ import Heade from '../../components/heade.vue'
         this.addDiscusssVisible=true
         this.dialogType=type
         if(type==3){
-          this.HudongForm.name="课堂名称"
-          this.HudongForm.startTime="2020-05-13"
+
         }else{
           this.HudongForm.name=""
-          this.HudongForm.startTime=""
+          this.HudongForm.time=""
         }
       },
       changeUpload (file) { // 资料上传
