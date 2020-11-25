@@ -118,7 +118,7 @@
     border-bottom: 1px solid #14c35a;
     .header-list{
       margin: 0 auto;
-      line-height: 60px;
+      line-height: 50px;
       .logo{
         float: left;
         margin-right: 30px;

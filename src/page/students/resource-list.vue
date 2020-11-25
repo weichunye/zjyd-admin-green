@@ -143,14 +143,14 @@ import Footer from '@/components/footer.vue'
       min-height: 600px;
       background: #fff;
       dl{
-        margin-top: 20px;
+        margin-top: 25px;
         overflow: hidden;
         width: 100%;
         height: 120px;
         border-radius: 10px;
         dt{
           float: left;
-          margin-top: 20px;
+          margin: 20px 5px 0 5px;
           width: 50px;
           height: 50px;
           line-height:50px;
@@ -164,7 +164,7 @@ import Footer from '@/components/footer.vue'
 
         dd{
           float: left;
-          width: 80%;
+          width: 200px;
           h4{
             margin-top: 10px;
             padding-left: 4%;

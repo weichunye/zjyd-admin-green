@@ -31,13 +31,13 @@
         </el-col>
 
       </el-row>
-      <el-pagination
+   <!--   <el-pagination
         style="margin-top: 30px; text-align: center"
         :page-size="20"
         :pager-count="11"
         layout="prev, pager, next"
         :total="1000">
-      </el-pagination>
+      </el-pagination>-->
     </div>
     <el-dialog
       title="新建课程"

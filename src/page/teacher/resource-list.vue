@@ -27,13 +27,6 @@
           </router-link>
         </el-col>
       </el-row>
-      <el-pagination
-        style="margin-top: 30px; text-align: center"
-        :page-size="20"
-        :pager-count="11"
-        layout="prev, pager, next"
-        :total="1000">
-      </el-pagination>
     </div>
     <el-dialog
       title="上传资源"
@@ -140,13 +133,13 @@ import Footer from '@/components/footer.vue'
       background: #fff;
       dl{
         overflow: hidden;
-        margin-top: 15px;
+        margin-top: 25px;
         width: 100%;
         height: 87px;
         border-radius: 10px;
         dt{
           float: left;
-          margin-top: 20px;
+          margin: 20px 5px 0 5px;
           width: 50px;
           height: 50px;
           line-height:50px;
@@ -160,7 +153,7 @@ import Footer from '@/components/footer.vue'
 
         dd{
           float: left;
-          width: 80%;
+          width: 200px;
           h4{
             margin-top: 10px;
             padding-left: 4%;

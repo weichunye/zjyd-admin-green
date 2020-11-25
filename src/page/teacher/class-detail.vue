@@ -140,7 +140,7 @@
   </span>
     </el-dialog>
     <el-dialog
-      title="新建课程"
+      title="编辑课程"
       :visible.sync="creatClassVisible"
       width="80%">
       <div class="creatClass-dia">
@@ -207,13 +207,13 @@ import Footer from '@/components/footer.vue'
           time:''
         },
         classForm:{
-          name:'人工智能V1',
-          time:'32',
-          region:'bixiu',
-          startTime:'2020-02-23',
-          desc:'课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课\n' +
-            '         程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课\n' +
-            '         程简介课程简介课程简介'
+          name:'抗菌药与超级细菌——天使与魔鬼的博弈',
+          time:'7',
+          region:'必修',
+          startTime:'2020-09-13',
+          desc:'超级细菌肆虐、感染无药可医，人类正面临前所未有的困境。面对这危及每个人的严酷现实，' +
+            '我们该如何反击？本课程将以独特、新颖的视角，为你展现抗菌药和超级细菌间博弈的历程；以深入浅出、' +
+            '生动形象的课件，教你抗菌药与超级细菌的知识；以浅显易懂、亦庄亦谐的教学情景剧，让你辩证地看待菌药的关系。'
         },
         dataList:[
           {name:'病原生物与人类',desc:"新冠病毒从何而来？ 艾滋病正在离我们远去吗？ 青蒿素的研制缘何能获诺奖？ 白色瘟疫的阴影为何挥之不去",time:'2020-09-22',img:'http://nos.netease.com/edu-image/C321D9E56A934D520D9DD79F9527CCE6.jpg?imageView&thumbnail=426y240&quality=100'},

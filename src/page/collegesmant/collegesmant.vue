@@ -4,8 +4,8 @@
     <Header :activeName="'collegesmant'"/>
     <div class="pre-box collegesmant-cont">
       <div class="sechinput">
-        <el-input v-model="input" placeholder="请输入内容"></el-input>
-        <el-button type="primary" icon="el-icon-search">搜索</el-button>
+        <input v-model="input" placeholder="请输入内容"></input>
+        <button>搜索资源名称</button>
       </div>
       <ul>
         <li v-for="(item, index) of dataList" :key='index'>
@@ -150,26 +150,30 @@
     min-height:300px;
     display: block;
     .sechinput{
+      overflow: hidden;
+     margin: 20px 20px;
       display: flex;
-      padding:20px 20px;
-      width:100%;
-      text-align: right;
-      justify-content: flex-end;
-      .el-input{
+      text-align: left;
+      width:94%;
+      height: 30px;
+      border: 1px solid #dedede;
+      border-radius: 5px;
+      input{
         display: block;
-        width:30%;
         float:right;
+        width: 80%;
       }
-      .el-button{
+     button{
         float:right;
-        margin:0 10px;
-        background: #3621fb;
-        .el-icon-search{
-          color: #ffffff;
-        }
-        span{
-          color: #ffffff;
-        }
+        margin:0;
+       padding: 0;
+        width: 20%;
+       height: 30px;
+       line-height: 30px;
+        background: #9ee6a5;
+        color: #186c20;
+       border: none;
+       letter-spacing: 2px;
       }
     }
     ul{
