@@ -66,15 +66,18 @@
   </span>
       </el-dialog>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import Header from '@/components/heade.vue'
+  import Footer from '@/components/footer.vue'
 	export default {
 		name: 'Collegesmant',
 		components: {
       Header,
+      Footer
 		},
 		data() {
 			return {
@@ -141,7 +144,7 @@
 .collegesmant{
   //width:100%;
   display: block;
-  padding:20px 0 20px 0;
+  padding:0;
   background: #ffffff;
   .collegesmant-cont{
     min-height:300px;

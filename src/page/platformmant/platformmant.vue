@@ -51,15 +51,18 @@
               </span>
       </el-dialog>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import Header from '@/components/heade.vue'
+  import Footer from '@/components/footer.vue'
 	export default {
 		name: 'Collegesmant',
 		components: {
       Header,
+      Footer
 		},
 		data() {
 			return {

@@ -180,15 +180,18 @@
     <el-button type="primary" @click="creatClassSuccess">确 定</el-button>
   </span>
     </el-dialog>
+    <Footer></Footer>
 	</div>
 </template>
 
 <script>
 import Heade from '../../components/heade.vue'
+import Footer from '@/components/footer.vue'
 	export default {
 		name: 'Class-Detail',
 		components: {
-      Heade
+      Heade,
+      Footer
 		},
 		data() {
 			return {

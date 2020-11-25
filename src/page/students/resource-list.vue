@@ -89,15 +89,18 @@
         </el-col> -->
       </el-row>
 	</div>
+  <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Heade from '../../components/heade-students.vue'
+import Footer from '@/components/footer.vue'
 	export default {
 		name: 'ResourseStudent',
 		components: {
-      Heade
+      Heade,
+      Footer
 
 
 		},

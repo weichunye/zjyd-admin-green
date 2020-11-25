@@ -30,16 +30,18 @@
 
 
     </div>
-
+<Footer></Footer>
 	</div>
 </template>
 
 <script>
   import Heade from '../../components/heade-students.vue'
+  import Footer from '@/components/footer.vue'
 	export default {
 		name: 'Class-Detail',
 		components: {
-      Heade
+      Heade,
+      Footer
 		},
 		data() {
 			return {

@@ -20,16 +20,18 @@
         <img src="http://img.xuexi111.org/d/file/resource/2018-06-23/e0a7a2d4729a917b192dfdd3c8b0bd46.jpg" alt="">
       </div>
     </div>
-
+<Footer></Footer>
 	</div>
 </template>
 
 <script>
 import Heade from '../../components/heade.vue'
+import Footer from '@/components/footer.vue'
 	export default {
 		name: 'ResourcePreview',
 		components: {
-      Heade
+      Heade,
+      Footer
 
 
 		},

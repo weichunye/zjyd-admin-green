@@ -109,8 +109,13 @@
 <style lang="less">
   .header{
     width: 100%;
-    height: 60px;
-    background: #21ca65;
+    height: 50px;
+    background: -moz-linear-gradient(top, #21ca65 90%, #5cdb8f 100%);
+    background: -webkit-linear-gradient(top, #21ca65 90%, #5cdb8f 100%);
+    background: -o-linear-gradient(top, #21ca65 90%, #5cdb8f 100%);
+    background: -ms-linear-gradient(top, #21ca65 90%, #5cdb8f 100%);
+    background: linear-gradient(top,#21ca65 90%, #5cdb8f 100%);
+    border-bottom: 1px solid #14c35a;
     .header-list{
       margin: 0 auto;
       line-height: 60px;
@@ -133,7 +138,7 @@
         }
       }
       .activename{
-        background: #f6d126;
+        background: #eb7f1e;
         color: #fff;
       }
 

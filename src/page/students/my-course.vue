@@ -129,15 +129,18 @@
         :total="1000">
       </el-pagination>
     </div>
+    <Footer></Footer>
 	</div>
 </template>
 
 <script>
   import Heade from '../../components/heade-students.vue'
+  import Footer from '@/components/footer.vue'
 	export default {
 		name: 'Enter',
 		components: {
-      Heade
+      Heade,
+      Footer
 
 
 		},
