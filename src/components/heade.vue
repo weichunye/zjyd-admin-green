@@ -12,9 +12,9 @@
         <span class="login-out">退出</span>
         </router-link>
       </li>
-      <li @click="openScreen">
+  <!--    <li @click="openScreen">
         投屏
-      </li>
+      </li>-->
       <router-link  :to="{path:'/resource-teacher'}" >
       <li :class="[this.activeName=='resoure'?'activename':'']">
         我的资源

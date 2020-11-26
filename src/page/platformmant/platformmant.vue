@@ -212,6 +212,20 @@
       }
     }
   }
+  .el-button{
+    padding:5px 10px;
+    height:30px;
+    line-height:20px;
+  }
+  .el-button--primary{
+    background: rgba(23,174,84,0.2);
+    &:hover{
+      background: rgba(23,174,84,1);
+      span{
+        color:#ffffff;
+      }
+    }
+  }
 }
 
 </style>

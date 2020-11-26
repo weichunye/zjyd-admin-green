@@ -38,13 +38,25 @@
               <button class="btn-creat-class" @click="editClassroom(2)">添加互动课堂</button>
             </el-col>
           </el-row>
+          <el-row>
+            <el-col :span="24">
+           <ul class="tools">
+             <li class="li-bg-1" @click="handlActive(1)">添加资料</li>
+             <li  class="li-bg-2"  @click="handlActive(2)">添加作业</li>
+             <li  class="li-bg-3"  @click="handlActive(6)">签到</li>
+             <li  class="li-bg-4"  @click="handlActive(4)">抢答</li>
+             <li  class="li-bg-5"  @click="handlActive(5)">投票</li>
+             <li  class="li-bg-6"  @click="handlActive(3)">讨论</li>
+           </ul>
+            </el-col>
+          </el-row>
           <el-row :gutter="20">
             <el-col :span="12" v-for="item in dataList">
               <el-card class="box-card" style="margin-top: 15px">
                 <div slot="header" class="clearfix">
                   <span>{{item.name}}</span>
                   <el-button @click="editClassroom(3)" style="float: right; padding: 5px 8px; margin-left: 10px " type="primary" plain >编辑</el-button>
-                  <el-button @click="interactionVisible=true" style="float: right;padding: 5px 8px; " type="success" plain>备课</el-button>
+                 <!-- <el-button @click="interactionVisible=true" style="float: right;padding: 5px 8px; " type="success" plain>备课</el-button>-->
                 </div>
                 <div class="text item">
                  <p class="activeDesc">{{item.desc}}</p>
@@ -59,50 +71,81 @@
       </el-tabs>
     </div>
     <el-dialog
-      title="备课"
+      :title="activeType==1?'添加资料':activeType==2?'添加作业':''"
       :visible.sync="interactionVisible"
-      width="80%">
+      width="60%">
       <div class="creatClass-dia">
-        <el-tabs v-model="activeHudong" @tab-click="handleClick">
-          <el-tab-pane label="添加资料" name="first">
-            <div class="add-data">
-              <el-upload class="upload-demo" action="" :auto-upload='false' :on-change="datasChange">
-                <el-button size="small" type="primary">点击上传</el-button>
-              </el-upload>
-              <div class="li-name" v-for="item of datasList">
-                {{item.name}} <span>编辑</span><span>删除</span>
-              </div>
-              <!-- <div class="li-name">
-                资料名称 <span>编辑</span><span>删除</span>
-              </div> -->
+          <div v-if="activeType==1" class="add-data">
+            <el-upload class="upload-demo" action="" :auto-upload='false' :on-change="datasChange">
+              <el-button size="small" type="primary">点击上传</el-button>
+            </el-upload>
+            <div class="li-name" v-for="item of datasList">
+              {{item.name}} <span>编辑</span><span>删除</span>
             </div>
-          </el-tab-pane>
-          <el-tab-pane label="添加作业" name="second">
-            <div class="add-data">
-              <el-upload class="upload-demo" action="" :auto-upload='false' :on-change='taskChange'>
-                <el-button size="small" type="primary">添加作业</el-button>
-              </el-upload>
-              <div class="li-name" v-for="item of taskList">
-                {{item.name}} <span>编辑</span><span>删除</span>
-              </div>
+            <!-- <div class="li-name">
+              资料名称 <span>编辑</span><span>删除</span>
+            </div> -->
+          </div>
+          <div v-if="activeType==2" class="add-data">
+            <el-upload class="upload-demo" action="" :auto-upload='false' :on-change='taskChange'>
+              <el-button size="small" type="primary">添加作业</el-button>
+            </el-upload>
+            <div class="li-name" v-for="item of taskList">
+              {{item.name}} <span>编辑</span><span>删除</span>
             </div>
-          </el-tab-pane>
-          <el-tab-pane label="添加互动活动" name="third">
-            <div class="add-data">
-            <el-row :gutter="20">
-              <el-col :span="24">
-                <el-button @click="addDiscusssVisible=true,dialogType=1" size="small" type="primary">添加讨论</el-button>
-              </el-col></el-row>
-            <div class="li-name" v-for="item of activeList">
-             {{item.name}} <span>编辑</span><span>删除</span>
-            </div>
-            </div>
-          </el-tab-pane>
-        </el-tabs>
+          </div>
+        <div  v-if="activeType==3" class="add-data">
+          <el-row :gutter="20">
+            <el-col :span="24">
+              <el-form ref="form" :model="discussForm" label-width="80px">
+                <el-form-item label="讨论名称">
+                  <el-input v-model="discussForm.name"></el-input>
+                </el-form-item>
+                <el-form-item label="课程简介" prop="desc">
+                  <el-input type="textarea" v-model="discussForm.desc"></el-input>
+                </el-form-item>
+              </el-form>
+            </el-col></el-row>
+
+        </div>
+        <div  v-if="activeType==4" class="add-data">
+          <el-row :gutter="20">
+            <el-col :span="24">
+              <el-form ref="form" :model="discussForm" label-width="150px">
+                <el-form-item label="设置抢答人数">
+                  <el-input v-model="discussForm.name"></el-input>
+                </el-form-item>
+              </el-form>
+            </el-col></el-row>
+        </div>
+        <div  v-if="activeType==5" class="add-data">
+          <el-row :gutter="20">
+            <el-col :span="24">
+              <el-form ref="form" :model="discussForm" label-width="80px">
+                <el-form-item label="投票名称">
+                  <el-input v-model="discussForm.name"></el-input>
+                </el-form-item>
+                <el-form-item label="A">
+                  <el-input v-model="discussForm.name"></el-input>
+                </el-form-item>
+                <el-form-item label="B">
+                  <el-input v-model="discussForm.name"></el-input>
+                </el-form-item>
+              </el-form>
+            </el-col></el-row>
+        </div>
+        <div  v-if="activeType==6" class="add-data">
+          <el-row :gutter="20">
+            <el-col :span="24">
+              <img style="display: block; width: 300px; height: 300px; margin: 15px auto" src="../../assets/teacher/erweim.png" alt="">
+            </el-col></el-row>
+        </div>
+
+
       </div>
       <span slot="footer" class="dialog-footer">
- <!--   <el-button @click="interactionVisible = false">取 消</el-button>
-    <el-button type="primary" @click="interactionVisible = false">确 定</el-button>-->
+    <el-button @click="interactionVisible = false">取 消</el-button>
+    <el-button type="primary" @click="interactionVisible = false">确 定</el-button>
   </span>
     </el-dialog>
     <el-dialog
@@ -236,7 +279,8 @@ import Footer from '@/components/footer.vue'
           {name: '如何理解病原生物与人类的关系'}
         ],
         addDiscusssVisible:false,
-        dialogType:1
+        dialogType:1,
+        activeType:1
       }
 		},
       computed:{
@@ -248,6 +292,11 @@ import Footer from '@/components/footer.vue'
 		},
 
 		methods: {
+      handlActive(type){
+        this.activeType=type
+        this.interactionVisible=true
+
+      },
       creatDiscusssSuccess(){
         this.addDiscusssVisible=false
         this.$message({
@@ -328,6 +377,45 @@ import Footer from '@/components/footer.vue'
         }
       }
 
+    }
+    .tools{
+      overflow: hidden;
+      margin: 15px;
+      width: 100%;
+      li{
+        float: left;
+        margin-right: 35px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 12px;
+        font-size: 16px;
+        color: #000;
+        text-align: center;
+        cursor: pointer;
+        &:hover{
+          font-size: 18px;
+        }
+      }
+
+      .li-bg-1{
+        background: #d9deed;
+      }
+      .li-bg-2{
+        background: #d9edea;
+      }
+      .li-bg-3{
+        background: #c9efd3;
+      }
+      .li-bg-4{
+        background: #e8ecab;
+      }
+      .li-bg-5{
+        background: #f2e2c3;
+      }
+      .li-bg-6{
+        background: #f1d4ce;
+      }
     }
     .btn-creat-class{
       float: right;
