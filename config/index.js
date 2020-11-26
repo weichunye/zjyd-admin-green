@@ -24,7 +24,7 @@ module.exports = {
     // Various Dev Server settings
 /*    host: '192.168.1.2
 ', // can be overwritten by process.env.HOST*/
-    host: '192.168.8.221', // can be overwritten by process.env.HOST
+    host: '127.0.0.1', // can be overwritten by process.env.HOST
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

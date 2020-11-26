@@ -56,33 +56,6 @@ const i18n = new VueI18n({
   }
 })
 
-var userJsonStr = sessionStorage.getItem('sessionData');
-
-userJsonStr={"flag":"1","error":"","userId":"10","token":"79c1558ddb25d09365d490cc0bc2eaa3","refreshToken":"0f2dc79a3280cb4e672d3eac7f70a1c8","userInfo":{"trueName":"李健","cstnetId":"371246735@qq.com"}}
-userJsonStr=JSON.stringify(userJsonStr);
-var userEntity = JSON.parse(userJsonStr);
-if(userEntity){
-  window.SITE_CONFIG['token'] = userEntity.token;
-  Vue.prototype.userInfo = userEntity.userInfo;
-  Vue.prototype.userStatus=userEntity.userStatus
-  Vue.prototype.$userId = userEntity.userId;
-  window.SITE_CONFIG['userId'] = userEntity.userId;
-}
-console.log("Vue.prototype.userId99999999999999999999",Vue.prototype.userId)
-
-/*$.getScript("http://passport.escience.cn/js/isLogin.do", function(){
-  console.log("data.result",data.result)
-  if(data.result&&!localStorage.getItem("ifLogin")){
-    localStorage.setItem("ifLogin",true)
-    window.location.href = window.SITE_CONFIG['apiURL'] + '/haoweb/web/auth/login'
-  }
-  if(!data.result){
-    _this.userId=null
-    localStorage.removeItem("sessionData")
-    localStorage.removeItem("ifLogin")
-    sessionStorage.clear()
-  }
-})*/
 new Vue({
   el: '#app',
   i18n,

@@ -129,7 +129,7 @@
               placeholder="选择日期">
             </el-date-picker>
           </el-form-item>
-          <el-form-item label="资源描述" prop="desc">
+          <el-form-item label="课堂描述" prop="desc">
             <el-input type="textarea" v-model="HudongForm.desc"></el-input>
           </el-form-item>
         </el-form>
