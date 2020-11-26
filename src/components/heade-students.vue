@@ -2,11 +2,11 @@
   <div class="header">
     <ul class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>
       </li>
       <li class="login">
-        花花
-        <span>[学生]</span>
+        钱晓鑫
+        <span style="color:#ffffff;">[学生]</span>
         <router-link  :to="{path:'/'}" >
           <span class="login-out">退出</span>
         </router-link>
@@ -73,11 +73,11 @@
         float: right;
         margin-left: 80px;
         padding: 0 10px;
-        font-size: 20px;
+        font-size: 16px;
         color: #fff;
         cursor: pointer;
         &:hover{
-          color: #000;
+          color: #fff;
         }
       }
       .activename{

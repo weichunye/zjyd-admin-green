@@ -240,6 +240,12 @@ import Footer from '@/components/footer.vue'
       cursor: pointer;
       border-radius: 6px;
     }
+    .el-button--primary{
+      background: #17ae54;
+      span{
+        color:#ffffff;
+      }
+    }
 	}
   .creatClass-dia{
     margin: 10px auto;
@@ -271,6 +277,15 @@ import Footer from '@/components/footer.vue'
       width: 178px;
       height: 178px;
       display: block;
+    }
+    .el-button--primary{
+      background: #17ae54;
+      span{
+        color:#ffffff;
+      }
+      &:hover{
+        background: #17ae54;
+      }
     }
   }
 

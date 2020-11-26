@@ -33,7 +33,15 @@ button {
 li {
 	list-style: none;
 }
-
+input:focus{
+  border-color:#17ae54!important;
+}
+textarea:focus{
+  border-color:#17ae54!important;
+}
+input:hover{
+  border-color:#17ae54!important;
+}
 input::-webkit-input-placeholder {
 	/* WebKit browsers */
 	color: #DEDEDE;

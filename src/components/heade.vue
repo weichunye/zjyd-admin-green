@@ -3,11 +3,11 @@
     <!--教师端-->
     <ul v-if="this.activeName=='resoure'||this.activeName=='class'" class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>
       </li>
       <li class="login">
-        周周
-        <span>[老师]</span>
+        赵震平
+        <span style="color:#ffffff;">[老师]</span>
         <router-link  :to="{path:'/'}" >
         <span class="login-out">退出</span>
         </router-link>
@@ -30,11 +30,11 @@
     <!--院校管理-->
     <ul v-if="this.activeName=='collegesmant'" class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>
       </li>
       <li class="login">
-        木糖醇
-        <span>[院校管理员]</span>
+        孙志鹏
+        <span style="color:#ffffff;">[院校管理员]</span>
         <router-link  :to="{path:'/'}" >
           <span class="login-out">退出</span>
         </router-link>
@@ -46,11 +46,11 @@
     <!--平台管理-->
     <ul v-if="this.activeName=='platformmant'" class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>
       </li>
       <li class="login">
-        嘎巴都
-        <span>[平台管理员]</span>
+        李繁伟
+        <span style="color:#ffffff;">[平台管理员]</span>
         <router-link  :to="{path:'/'}" >
            <span class="login-out">退出</span>
         </router-link>
@@ -130,11 +130,11 @@
         float: right;
         margin-left: 80px;
         padding: 0 10px;
-        font-size: 20px;
+        font-size: 16px;
         color: #fff;
         cursor: pointer;
         &:hover{
-          color: #000;
+          color: #ffffff;
         }
       }
       .activename{

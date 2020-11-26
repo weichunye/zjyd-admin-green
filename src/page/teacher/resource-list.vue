@@ -137,6 +137,7 @@ import Footer from '@/components/footer.vue'
         width: 100%;
         height: 87px;
         border-radius: 10px;
+
         dt{
           float: left;
           margin: 20px 5px 0 5px;
@@ -153,7 +154,8 @@ import Footer from '@/components/footer.vue'
 
         dd{
           float: left;
-          width: 200px;
+          width: 187px;
+          padding:6px 10px 0 0;
           h4{
             margin-top: 10px;
             padding-left: 4%;
@@ -168,7 +170,7 @@ import Footer from '@/components/footer.vue'
           p{
             padding-left: 4%;
             width: 96%;
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -216,6 +218,21 @@ import Footer from '@/components/footer.vue'
       cursor: pointer;
       border-radius: 6px;
     }
+    .el-button--primary{
+      background: #17ae54;
+      span{
+        color:#ffffff;
+      }
+    }
+    .el-radio{
+      .el-radio__input.is-checked .el-radio__inner{
+        background: #17ae54;
+        border-color:#17ae54;
+      }
+      .el-radio__input.is-checked+.el-radio__label{
+        color:#17ae54;
+      }
+    }
 	}
   .creatClass-dia{
     margin: 10px auto;
@@ -247,6 +264,12 @@ import Footer from '@/components/footer.vue'
       width: 178px;
       height: 178px;
       display: block;
+    }
+    .el-button--primary{
+      background: #17ae54;
+      span{
+        color:#ffffff;
+      }
     }
   }
 

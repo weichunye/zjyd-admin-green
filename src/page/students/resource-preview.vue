@@ -15,6 +15,7 @@
           </li>
         </ul>
         <p>资源介绍：《星学大成》是收录于《四库全书.子部》的最重要的星命学著作，作者万民英精选了明代流传的星学秘藏珍本，将其汇集成《星学大成》。《四库全书》对此给予了极高评价，称”其鸠集众说，多术家不传之本，实为五星之大全。”然而，由于古代科学的落后和古人认识水平的局限，现在看来，传统星命学存在其历史的局限，甚至流于荒谬列稽。但是作为一种中国人曾普遍有所接触的文化现象和文明遗产，它也值得我们对其进行较全面的了解，以去粗取精，去伪存真，汲取传统文化中的智慧涵养。</p>
+        <p>预览时间：0时3分{{prewTime}}秒</p>
       </div>
       <div class="img-box">
         <img src="http://img.xuexi111.org/d/file/resource/2018-06-23/e0a7a2d4729a917b192dfdd3c8b0bd46.jpg" alt="">
@@ -46,14 +47,25 @@
           desc:'',
           imageUrl:'',
 
+
         },
-        radio:'1'
+        radio:'1',
+        prewTime:8
       }
 		},
       computed:{
 
       },
 		mounted() {
+
+      setInterval(()=>{
+        if(this.prewTime<60){
+          this.prewTime=this.prewTime+1
+        }else {
+          this.prewTime=0
+        }
+
+      },1000)
 
 
 		},

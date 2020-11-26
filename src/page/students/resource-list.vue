@@ -17,7 +17,7 @@
                {{item.desc}}
               </p>
               <p style="margin-top: 10px">
-                <el-progress :percentage="item.percentage"></el-progress>
+                预览时长：{{item.percentage}}
               </p>
             </dd>
         </dl>
@@ -107,13 +107,13 @@ import Footer from '@/components/footer.vue'
 		data() {
 			return {
         dataList:[
-          {type:'2',name:'扫描版《图解星学大成全三部》[PDF]','desc':'《星学大成》是收录于《四库全书.子部》的最重要的星命学著作，作者万民英精选了明代流传的星学秘藏珍本，将其汇集成', percentage: '25'},
-          {type:'1', name: "《新版中日交流标准日本语(初.中级）》",'desc':'《新版中日交流标准日本语》是1988年出版的《中日交流标准日本语初级上、下》的修订本，是人民教育出版衬与日本光村图书', percentage: '40'},
-          {type:'2',name:'扫描版《鬼谷子绝学》[PDF]','desc':'《鬼谷子绝学》一个人缺的永远不是钱，缺的是赚钱的智谋，一个人缺的永远不是团队，缺的是俘获追', percentage: '50'},
-          {type:'2',name:'《超有趣的英文基础文法》[PDF]','desc':'最适合国人学习的英文文法书，针对最容易犯的文法错误，解析文法', percentage: '60'},
-          {type:'3',name:'扫描版《清朝全史 最新经典珍藏》','desc':'《清朝全史(最新经典珍藏)》以宏阔的视角，科学的历史观述载历史，将中外历史汇聚成', percentage: '95'},
-          {type:'2',name:'《美国法律文库：证券法》','desc':'《美国法律文库：证券法》是根据原著第三版翻译，是中国法学学者提供学习美国证券法', percentage: '98'},
-          {type:'2',name:'《大历史：从宇宙大爆炸到今天》','desc':'《大历史：从宇宙大爆炸到今天》打破传统范式，将各个学科的知识交织融合', percentage: '72'}
+          {type:'2',name:'扫描版《图解星学大成全三部》[PDF]','desc':'《星学大成》是收录于《四库全书.子部》的最重要的星命学著作，作者万民英精选了明代流传的星学秘藏珍本，将其汇集成', percentage: '0小时3分8秒'},
+          {type:'1', name: "《新版中日交流标准日本语(初.中级）》",'desc':'《新版中日交流标准日本语》是1988年出版的《中日交流标准日本语初级上、下》的修订本，是人民教育出版衬与日本光村图书', percentage: '0小时23分16秒'},
+          {type:'2',name:'扫描版《鬼谷子绝学》[PDF]','desc':'《鬼谷子绝学》一个人缺的永远不是钱，缺的是赚钱的智谋，一个人缺的永远不是团队，缺的是俘获追', percentage: '2小时45分5秒'},
+          {type:'2',name:'《超有趣的英文基础文法》[PDF]','desc':'最适合国人学习的英文文法书，针对最容易犯的文法错误，解析文法', percentage: '0小时3分5秒'},
+          {type:'3',name:'扫描版《清朝全史 最新经典珍藏》','desc':'《清朝全史(最新经典珍藏)》以宏阔的视角，科学的历史观述载历史，将中外历史汇聚成', percentage: '1小时12分9秒'},
+          {type:'2',name:'《美国法律文库：证券法》','desc':'《美国法律文库：证券法》是根据原著第三版翻译，是中国法学学者提供学习美国证券法', percentage: '0小时9分36秒'},
+          {type:'2',name:'《大历史：从宇宙大爆炸到今天》','desc':'《大历史：从宇宙大爆炸到今天》打破传统范式，将各个学科的知识交织融合', percentage: '1小时32分52秒'}
         ],
       }
 		},
@@ -161,7 +161,8 @@ import Footer from '@/components/footer.vue'
 
         dd{
           float: left;
-          width: 200px;
+          width: 187px;
+          padding:6px 10px 0 0;
           h4{
             margin-top: 10px;
             padding-left: 4%;
@@ -176,7 +177,7 @@ import Footer from '@/components/footer.vue'
           p{
             padding-left: 4%;
             width: 96%;
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -223,6 +224,9 @@ import Footer from '@/components/footer.vue'
       background: #17ae54;
       cursor: pointer;
       border-radius: 6px;
+    }
+    .el-progress-bar__inner{
+      background: #17ae54;
     }
 	}
   .creatClass-dia{

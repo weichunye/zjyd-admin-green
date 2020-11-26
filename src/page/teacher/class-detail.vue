@@ -4,7 +4,7 @@
     <div class="pre-box content">
       <el-tabs type="border-card">
         <el-tab-pane>
-          <span slot="label"><i class="el-icon-date"></i> 课程详情</span>
+          <span slot="label">课程详情</span>
           <el-row >
             <el-col :span="24">
               <button class="btn-creat-class" @click="creatClassVisible=true">编辑课程</button>
@@ -31,7 +31,8 @@
             </p>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="互动课堂">
+        <el-tab-pane>
+          <span slot="label">互动课堂</span>
           <el-row>
             <el-col :span="24">
               <button class="btn-creat-class" @click="editClassroom(2)">添加互动课堂</button>
@@ -337,6 +338,27 @@ import Footer from '@/components/footer.vue'
       background: #17ae54;
       cursor: pointer;
       border-radius: 6px;
+    }
+    .el-button--primary{
+      background: #17ae54;
+      span{
+        color:#ffffff;
+      }
+      &:hover{
+        background: #17ae54;
+      }
+    }
+    .el-tabs__active-bar{
+      background: #17ae54;
+    }
+    .el-tabs__item{
+      //color: #17ae54;
+      &:hover{
+        color: #17ae54;
+      }
+    }
+    .el-tabs__item.is-active{
+      color: #17ae54;
     }
 	}
   .creatClass-dia{

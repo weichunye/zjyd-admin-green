@@ -147,6 +147,9 @@
       cursor: pointer;
       border-radius: 6px;
     }
+    .el-progress-bar__inner{
+      background: #17ae54;
+    }
 	}
   .creatClass-dia{
     margin: 10px auto;

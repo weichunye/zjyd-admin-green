@@ -114,10 +114,11 @@
   //width:100%;
   display: block;
   padding:20px 0 20px 0;
-  background: #ffffff;
+  //background: #ffffff;
   .collegesmant-cont{
     min-height:300px;
     display: block;
+    background: #ffffff;
     .sechinput{
       overflow: hidden;
       margin: 20px 20px;
@@ -131,6 +132,7 @@
         display: block;
         float:right;
         width: 80%;
+        padding:0 10px;
       }
       button{
         float:right;
@@ -175,7 +177,7 @@
           }
         }
         &:hover{
-          border-color:#3621fb;
+          border-color:#17ae54;
           box-shadow: 0 18px 30px rgba(54,33,251,.09);
         }
         &:nth-child(2n){
@@ -193,6 +195,20 @@
             cursor: pointer;
           }
         }
+      }
+    }
+  }
+  .el-button{
+    padding:5px 10px;
+    height:30px;
+    line-height:20px;
+  }
+  .el-button--primary{
+    background: rgba(23,174,84,0.2);
+    &:hover{
+      background: rgba(23,174,84,1);
+      span{
+        color:#ffffff;
       }
     }
   }
