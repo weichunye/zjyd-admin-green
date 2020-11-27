@@ -116,7 +116,7 @@ import Footer from '@/components/footer.vue'
           message: '资源添加成功',
           type: 'success'
         })
-        let newForm={type:3,name:this.classForm.name,desc:this.classForm.desc}
+        let newForm={type:3,name:this.classForm.name,desc:this.classForm.desc,img:require("../../assets/pic/pic_10.jpg")}
         _this.dataList.push(newForm)
       },
 
