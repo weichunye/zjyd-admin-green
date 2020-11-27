@@ -4,7 +4,7 @@
     <div class="pre-box content">
       <div class="text-box">
         <p>
-          <span>课程名称：</span>抗菌药与超级细菌——天使与魔鬼的博弈
+          <span>课程名称：</span>{{resourceData.name}}
         </p>
         <p style="width: 360px; margin-left: 50px; overflow:hidden;">
          <span style="float: left; "> 学习进度：</span>
@@ -15,16 +15,16 @@
           <span>课时：</span>7
         </p>
         <p>
-          <span>开课日期：</span>2020-09-13
+          <span>开课日期：</span>{{resourceData.time}}
         </p>
         <p style="display: flex;">
-          <span style="line-height: 150px;">课程封面：</span><img src="http://nos.netease.com/edu-image/9F4E313F73803F25E2F82CBF24984FDA.png?imageView&thumbnail=426y240&quality=100" alt="">
+          <span style="line-height: 150px;">课程封面：</span><img :src="resourceData.img" alt="">
         </p>
         <p>
           <span>课程类型：</span>必修
         </p>
         <p>
-          <span>课程简介：</span>超级细菌肆虐、感染无药可医，人类正面临前所未有的困境。面对这危及每个人的严酷现实，我们该如何反击？本课程将以独特、新颖的视角，为你展现抗菌药和超级细菌间博弈的历程；以深入浅出、生动形象的课件，教你抗菌药与超级细菌的知识；以浅显易懂、亦庄亦谐的教学情景剧，让你辩证地看待菌药的关系。
+          <span>课程简介：</span>{{resourceData.desc}}
         </p>
       </div>
 
@@ -66,13 +66,15 @@
             '         程简介课程简介课程简介'
         },
         addDiscusssVisible:false,
-        dialogType:1
+        dialogType:1,
+        resourceData:''
       }
 		},
       computed:{
 
       },
 		mounted() {
+      this.resourceData=this.$route.params.resourceData
 
 
 		},

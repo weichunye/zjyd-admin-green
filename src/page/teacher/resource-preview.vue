@@ -32,7 +32,7 @@
         </el-dialog>
       </div>
       <div class="img-box">
-        <img :src="resourceData.img" alt="">
+        <img   :src="resourceData.img" alt="">
       </div>
     </div>
 <Footer></Footer>

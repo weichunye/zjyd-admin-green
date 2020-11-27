@@ -9,7 +9,7 @@
       </el-row>
       <el-row :gutter="20">
         <el-col v-for="item in dataList" :span="6">
-          <router-link  :to="{path:'/Class-detail',query:{id:'2'}}" >
+          <router-link :to="{name:'ClassDetail',params:{resourceData:item}}">
           <dl>
             <dt>
               <!-- <img :src="require('../../assets/teacher/'+item.img)" alt=""> -->
