@@ -15,7 +15,7 @@
               <span>课程名称：</span>{{resourceData.name}}
             </p>
             <p>
-              <span>课时：</span>7
+              <span>课时：</span>{{resourceData.classNum}}
             </p>
             <p>
               <span>开课日期：</span>{{resourceData.time}}
@@ -206,11 +206,11 @@
             </el-upload>
           </el-form-item>
           <el-form-item label="课时">
-            <el-input-number v-model="classForm.time" controls-position="right"></el-input-number>
+            <el-input-number v-model="classForm.classNum" controls-position="right"></el-input-number>
           </el-form-item>
           <el-form-item label="开课日期">
             <el-date-picker
-              v-model="classForm.startTime"
+              v-model="classForm.time"
               type="date"
               placeholder="选择日期">
             </el-date-picker>
@@ -296,9 +296,10 @@ import Footer from '@/components/footer.vue'
 
       },
 		mounted() {
+
       this.resourceData=this.$route.params.resourceData
-
-
+      this.classForm=this.$route.params.resourceData
+      this.classForm.region='bixiu'
 		},
 
 		methods: {
