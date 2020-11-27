@@ -51,10 +51,10 @@
             </el-col>
           </el-row>
           <el-row :gutter="20">
-            <el-col :span="12" v-for="item in dataList">
-              <el-card class="box-card" style="margin-top: 15px">
+            <el-col :span="12" v-for="(item,index) in dataList">
+              <el-card class="box-card"   :style="[{borderColor:index==itmeIndex?'#eb7f1e':'#dedede'}]">
                 <div slot="header" class="clearfix">
-                  <span>{{item.name}}</span>
+                  <span   @click="handleCard(index)">{{item.name}}</span>
                   <el-button @click="editClassroom(3)" style="float: right; padding: 5px 8px; margin-left: 10px " type="primary" plain >编辑</el-button>
                  <!-- <el-button @click="interactionVisible=true" style="float: right;padding: 5px 8px; " type="success" plain>备课</el-button>-->
                 </div>
@@ -71,9 +71,9 @@
       </el-tabs>
     </div>
     <el-dialog
-      :title="activeType==1?'添加资料':activeType==2?'添加作业':''"
+      :title="activeType==1?'添加资料':activeType==2?'添加作业':activeType==3?'添加讨论':activeType==4?'设置抢答':activeType==5?'投票':'签到'"
       :visible.sync="interactionVisible"
-      width="60%">
+      width="40%">
       <div class="creatClass-dia">
           <div v-if="activeType==1" class="add-data">
             <el-upload class="upload-demo" action="" :auto-upload='false' :on-change="datasChange">
@@ -122,13 +122,19 @@
           <el-row :gutter="20">
             <el-col :span="24">
               <el-form ref="form" :model="discussForm" label-width="80px">
-                <el-form-item label="投票名称">
+                <el-form-item label="投票主题">
                   <el-input v-model="discussForm.name"></el-input>
                 </el-form-item>
                 <el-form-item label="A">
                   <el-input v-model="discussForm.name"></el-input>
                 </el-form-item>
                 <el-form-item label="B">
+                  <el-input v-model="discussForm.name"></el-input>
+                </el-form-item>
+                <el-form-item label="C">
+                  <el-input v-model="discussForm.name"></el-input>
+                </el-form-item>
+                <el-form-item label="D">
                   <el-input v-model="discussForm.name"></el-input>
                 </el-form-item>
               </el-form>
@@ -145,7 +151,7 @@
       </div>
       <span slot="footer" class="dialog-footer">
     <el-button @click="interactionVisible = false">取 消</el-button>
-    <el-button type="primary" @click="interactionVisible = false">确 定</el-button>
+    <el-button type="primary" @click="handleDialog">确 定</el-button>
   </span>
     </el-dialog>
     <el-dialog
@@ -280,7 +286,8 @@ import Footer from '@/components/footer.vue'
         ],
         addDiscusssVisible:false,
         dialogType:1,
-        activeType:1
+        activeType:1,
+        itmeIndex:0
       }
 		},
       computed:{
@@ -296,6 +303,13 @@ import Footer from '@/components/footer.vue'
         this.activeType=type
         this.interactionVisible=true
 
+      },
+      handleDialog(){
+        this.$message({
+          message: this.activeType==1?'添加资料': this.activeType==2?'添加作业': this.activeType==3?'添加讨论': this.activeType==4?'设置抢答': this.activeType==5?'设置投票':'设置签到'+'成功',
+          type: 'success'
+        });
+        this.interactionVisible=false
       },
       creatDiscusssSuccess(){
         this.addDiscusssVisible=false
@@ -338,6 +352,11 @@ import Footer from '@/components/footer.vue'
         let newForm = {name:file.name}
         this.taskList.push(newForm)
       },
+      handleCard(index){
+        console.log("index",index)
+        this.itmeIndex=index
+
+      },
       handleClick () {
       }
       // handleAvatarSuccess(res, file) {
@@ -360,6 +379,11 @@ import Footer from '@/components/footer.vue'
       margin-top: 15px;
       min-height: 600px;
       background: #fff;
+      .box-card{
+        margin-top: 15px;
+        border: 1px solid #dedede;
+        cursor: pointer;
+      }
       .text-box{
         p{
           margin: 15px auto;
