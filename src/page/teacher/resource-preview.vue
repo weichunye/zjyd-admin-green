@@ -24,7 +24,7 @@
           width="30%"
           :before-close="handleClose"
           center>
-          <span style="text-align: center; display: block;">是否共享当前资源？</span>
+          <span style="text-align: center; display: block;">是否共享当前资源到大屏？</span>
           <span slot="footer" class="dialog-footer">
             <el-button @click="centerDialogShared = false">否</el-button>
             <el-button type="primary" @click="handleClose">是</el-button>

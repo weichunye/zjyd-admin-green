@@ -111,11 +111,12 @@
         <div  v-if="activeType==4" class="add-data">
           <el-row :gutter="20">
             <el-col :span="24">
-              <el-form ref="form" :model="discussForm" label-width="150px">
+             <!-- <el-form ref="form" :model="discussForm" label-width="150px">
                 <el-form-item label="设置抢答人数">
                   <el-input v-model="discussForm.name"></el-input>
                 </el-form-item>
-              </el-form>
+              </el-form>-->
+              <p class="qiangda" @click=" interactionVisible=false">开始抢答</p>
             </el-col></el-row>
         </div>
         <div  v-if="activeType==5" class="add-data">
@@ -307,10 +308,13 @@ import Footer from '@/components/footer.vue'
 
       },
       handleDialog(){
-        this.$message({
-          message: this.activeType==1?'添加资料': this.activeType==2?'添加作业': this.activeType==3?'添加讨论': this.activeType==4?'设置抢答': this.activeType==5?'设置投票':'设置签到'+'成功',
-          type: 'success'
-        });
+        if(this.activeType!=6){
+          this.$message({
+            message: this.activeType==1?'添加资料成功': this.activeType==2?'添加作业成功': this.activeType==3?'添加讨论成功': this.activeType==4?'抢答开始': this.activeType==5?'设置投票成功':'',
+            type: 'success'
+          });
+        }
+
         this.interactionVisible=false
       },
       creatDiscusssSuccess(){
@@ -500,6 +504,21 @@ import Footer from '@/components/footer.vue'
 
      }
    }
+    .qiangda{
+      margin: 50px auto;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      font-size: 32px;
+      color: #fff;
+      text-align: center;
+      border-radius: 50%;
+      background: #fb4b38;
+      cursor: pointer;
+    }
+    .qiangda:hover{
+      background: #75b5da;
+    }
   }
 
 </style>
