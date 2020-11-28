@@ -33,7 +33,7 @@
         :visible.sync="dialogVisible"
         class="title-Class"
         width="40%"
-        :before-close="handleClose">
+        >
         <div class="text">
           <el-form ref="form" :model="classForm" label-width="160px">
             <el-form-item label="审核是否通过">

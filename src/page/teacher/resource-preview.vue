@@ -22,7 +22,6 @@
           title="提示"
           :visible.sync="centerDialogShared"
           width="30%"
-          :before-close="handleClose"
           center>
           <span style="text-align: center; display: block;">是否共享当前资源到大屏？</span>
           <span slot="footer" class="dialog-footer">

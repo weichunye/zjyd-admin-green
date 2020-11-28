@@ -43,7 +43,7 @@
       title="新建课程"
       :visible.sync="creatClassVisible"
       width="80%"
-      :before-close="handleClose">
+      >
       <div class="creatClass-dia">
         <el-form ref="form" :model="classForm" label-width="80px">
           <el-form-item label="课程名称">

@@ -32,7 +32,7 @@
       title="上传资源"
       :visible.sync="creatClassVisible"
       width="60%"
-      :before-close="handleClose">
+      >
       <div class="creatClass-dia">
         <el-form ref="form" :model="classForm" label-width="160px">
           <el-form-item label="资源名称">
