@@ -101,7 +101,7 @@
                 <el-form-item label="讨论名称">
                   <el-input v-model="discussForm.name"></el-input>
                 </el-form-item>
-                <el-form-item label="课程简介" prop="desc">
+                <el-form-item label="讨论简介" prop="desc">
                   <el-input type="textarea" v-model="discussForm.desc"></el-input>
                 </el-form-item>
               </el-form>
@@ -311,6 +311,8 @@ import Footer from '@/components/footer.vue'
       handleDialog(){
         if(this.activeType!=6){
           this.$message({
+            showClose: true,
+            customClass:'classtc',
             message: this.activeType==1?'添加资料成功': this.activeType==2?'添加作业成功': this.activeType==3?'添加讨论成功': this.activeType==4?'抢答开始': this.activeType==5?'设置投票成功':'',
             type: 'success'
           });
@@ -321,6 +323,8 @@ import Footer from '@/components/footer.vue'
       creatDiscusssSuccess(){
         this.addDiscusssVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: this.dialogType==1?'添加讨论成功':'添加课堂成功',
           type: 'success'
         });
@@ -333,6 +337,8 @@ import Footer from '@/components/footer.vue'
       creatClassSuccess(){
         this.creatClassVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '课程编辑成功',
           type: 'success'
         });
@@ -521,5 +527,7 @@ import Footer from '@/components/footer.vue'
       background: #75b5da;
     }
   }
-
+  .classtc{
+    min-width:170px;
+  }
 </style>

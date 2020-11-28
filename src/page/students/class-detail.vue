@@ -83,6 +83,8 @@
       creatDiscusssSuccess(){
         this.addDiscusssVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: this.dialogType==1?'添加讨论成功':'添加课堂成功',
           type: 'success'
         });
@@ -91,6 +93,8 @@
       creatClassSuccess(){
         this.creatClassVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '课程编辑成功',
           type: 'success'
         });

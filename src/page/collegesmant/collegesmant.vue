@@ -114,6 +114,8 @@
         this.dialogVisible=false
         this.isAccess=true
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '审核完成',
           type: 'success'
         });
@@ -124,6 +126,8 @@
       handleUpload(){
         this.uploadVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '上传成功',
           type: 'success'
         });

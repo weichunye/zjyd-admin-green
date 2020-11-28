@@ -93,6 +93,8 @@
       handleClose() {
         this.dialogVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '审核完成',
           type: 'success'
         });

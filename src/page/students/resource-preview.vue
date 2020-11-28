@@ -75,6 +75,8 @@
       creatClassSuccess(){
         this.creatClassVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '资源添加成功',
           type: 'success'
         });

@@ -80,6 +80,8 @@ import Footer from '@/components/footer.vue'
       creatClassSuccess(){
         this.creatClassVisible=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '资源添加成功',
           type: 'success'
         });
@@ -87,6 +89,8 @@ import Footer from '@/components/footer.vue'
       handleClose(){
         this.centerDialogShared=false
         this.$message({
+          showClose: true,
+          customClass:'classtc',
           message: '共享成功!',
           type: 'success'
         });

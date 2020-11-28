@@ -94,11 +94,15 @@
       //width:100%;
       height:100%;
       display: flex;
+      display: -ms-flex; /* 兼容IE */
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       overflow: hidden;
       //margin-top: 15px;
       min-height: 300px;
+      //height:448px;
+      flex-shrink: 0; /* 2 */
       h2{
         margin: 0 0 20px;
         width: 100%;
@@ -113,6 +117,7 @@
         //height: 200px;
         background: rgba(227,243,233,0.3);
         border:2px solid #21ca65;
+        height:448px;
         //background: -moz-linear-gradient(top, #e3f3e9 40%, #21ca65 100%);
         //background: -webkit-linear-gradient(top,  #e3f3e9 40%, #21ca65 100%);
         //background: -o-linear-gradient(top,  #e3f3e9 40%, #21ca65 100%);
@@ -123,6 +128,8 @@
         .left{
           width:40%;
           //height:100%;
+          -ms-flex: 1; /* 兼容IE */
+          flex: 1;
           img{
             width:100%;
             height:100%;
@@ -131,6 +138,8 @@
         .right{
           width:54%;
           padding:40px 45px;
+          -ms-flex: 1; /* 兼容IE */
+          flex: 1;
         }
         .el-form-item__label{
           display: block;
