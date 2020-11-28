@@ -3,7 +3,7 @@
     <!--教师端-->
     <ul v-if="this.activeName=='resoure'||this.activeName=='class'" class="pre-box header-list">
       <li class="logo">
-        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>
+<!--        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>-->
       </li>
       <li class="login">
         赵震平
@@ -30,7 +30,7 @@
     <!--院校管理-->
     <ul v-if="this.activeName=='collegesmant'" class="pre-box header-list">
       <li class="logo">
-        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>
+<!--        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>-->
       </li>
       <li class="login">
         孙志鹏
@@ -46,7 +46,7 @@
     <!--平台管理-->
     <ul v-if="this.activeName=='platformmant'" class="pre-box header-list">
       <li class="logo">
-        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>
+<!--        LOGO<span style="font-size:12px; color:#ffffff;">(第一版)</span>-->
       </li>
       <li class="login">
         李繁伟
