@@ -81,7 +81,6 @@ import Footer from '@/components/footer.vue'
           {type:'3',name:'《大成拳》扫描版[PDF] 资料下载','desc':'意拳，又名大成拳，中国内家拳术的一种，源于心意拳','img':require("../../assets/pic/pic_4.jpg")},
           {type:'3',name:'新版中日交流标准日本语（中级上下）','desc':'本书是1990年出版的《中日交流标准日本语》中级上、下册的修本，是人民教育出版社与日本光村图书出版株式会社通力合作、精心编写的一套日语自学读本。','img':require("../../assets/pic/pic_5.jpg")},
           {type:'2',name:'《超有趣的英文基础文法》[PDF]','desc':'最适合国人学习的英文文法书，针对最容易犯的文法错误，解析文法','img':require("../../assets/pic/pic_6.jpg")},
-          {type:'1',name:'《罗织经》扫描版[PDF]','desc':'历史上最著名的酷吏，请君入瓮的发明者来俊臣所著；乃中国几千年文','img':require("../../assets/pic/pic_7.jpg")},
           {type:'1',name:'扫描版《清朝全史 最新经典珍藏》','desc':'《清朝全史(最新经典珍藏)》以宏阔的视角，科学的历史观述载历史，将中外历史汇聚成','img':require("../../assets/pic/pic_8.jpg")},
           {type:'2',name:'《美国法律文库：证券法》','desc':'《美国法律文库：证券法》是根据原著第三版翻译，是中国法学学者提供学习美国证券法','img':require("../../assets/pic/pic_9.jpg")},
           {type:'2',name:'《大历史：从宇宙大爆炸到今天》','desc':'《大历史：从宇宙大爆炸到今天》打破传统范式，将各个学科的知识交织融合','img':require("../../assets/pic/pic_10.jpg")}

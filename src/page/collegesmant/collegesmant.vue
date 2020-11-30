@@ -97,7 +97,7 @@
           {type:'2',name:'扫描版《鬼谷子绝学》[PDF]','desc':'《鬼谷子绝学》一个人缺的永远不是钱，缺的是赚钱的智谋，一个人缺的永远不是团队，缺的是俘获追', percentage: '50', isAccess: true,isUpload:false},
           {type:'2',name:'《大成拳》扫描版[PDF] 资料下载','desc':'意拳，又名大成拳，中国内家拳术的一种，源于心意拳', percentage: '100', isAccess: false,isUpload:false},
           {type:'2',name:'扫描本《蔡志忠漫画合集》','desc':'蔡志忠漫画合集36册 封神榜', percentage: '80', isAccess: true,isUpload:false},
-          {type:'2',name:'《罗织经》扫描版[PDF]','desc':'历史上最著名的酷吏，请君入瓮的发明者来俊臣所著；乃中国几千年文', percentage: '87', isAccess: false,isUpload:false},
+          {type:'2',name:'罗织经','desc':'罗织经简介', percentage: '87', isAccess: false,isUpload:false},
           {type:'2',name:'扫描版《清朝全史 最新经典珍藏》','desc':'《清朝全史(最新经典珍藏)》以宏阔的视角，科学的历史观述载历史，将中外历史汇聚成', percentage: '95', isAccess: false,isUpload:false},
         ],
       }

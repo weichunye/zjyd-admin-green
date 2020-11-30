@@ -78,7 +78,7 @@
           {type:'2', name: "《新版中日交流标准日本语(初.中级）》",'desc':'《新版中日交流标准日本语》是1988年出版的《中日交流标准日本语初级上、下》的修订本，是人民教育出版衬与日本光村图书', percentage: '40', isAccess: false},
           {type:'2',name:'《大成拳》扫描版[PDF] 资料下载','desc':'意拳，又名大成拳，中国内家拳术的一种，源于心意拳', percentage: '100', isAccess: false},
           {type:'2',name:'《超有趣的英文基础文法》[PDF]','desc':'最适合国人学习的英文文法书，针对最容易犯的文法错误，解析文法', percentage: '60', isAccess: true},
-          {type:'2',name:'《罗织经》扫描版[PDF]','desc':'历史上最著名的酷吏，请君入瓮的发明者来俊臣所著；乃中国几千年文', percentage: '87', isAccess: false},
+          {type:'2',name:'罗织经','desc':'罗织经简介', percentage: '87', isAccess: false},
         ],
       }
 		},

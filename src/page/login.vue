@@ -58,16 +58,16 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             console.log("this.loginForm.name",this.loginForm.name)
-            if(this.loginForm.name=="ls"){
+            if(this.loginForm.name=="weichunye"){
               this.$router.push('/enter');
             }
-            if(this.loginForm.name=="xs"){
+            if(this.loginForm.name=="liufan"){
               this.$router.push('/my-course');
             }
-            if(this.loginForm.name=="yx"){
+            if(this.loginForm.name=="linyu"){
               this.$router.push('/collegesmant');
             }
-            if(this.loginForm.name=="pt"){
+            if(this.loginForm.name=="maomao"){
               this.$router.push('/platformmant');
             }
           } else {
